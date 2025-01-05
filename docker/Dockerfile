@@ -63,12 +63,19 @@ ENV NVIDIA_VISIBLE_DEVICES=all
 ENV NVIDIA_DRIVER_CAPABILITIES=graphics,utility,compute
 ENV QT_X11_NO_MITSHM=1
 
-# Install some ardupilot and ardupilot_gazebo prereqs
+# Install some ardupilot and ardupilot_gazebo prereqs (libgz-sim7-dev is for gz garden)
 RUN apt-get update \
- && apt-get -y --quiet --no-install-recommends install \
+  && apt-get -y --quiet --no-install-recommends install \
     python3-wxgtk4.0 \
     rapidjson-dev \
     xterm \
+    libgz-sim7-dev \
+    libopencv-dev \
+    libgstreamer1.0-dev \
+    libgstreamer-plugins-base1.0-dev \
+    gstreamer1.0-plugins-bad \
+    gstreamer1.0-libav \
+    gstreamer1.0-gl \
   && rm -rf /var/lib/apt/lists/*
 
 # Create a non-root user
@@ -105,9 +112,13 @@ RUN modules/waf/waf-light configure --board sitl \
 WORKDIR /home/$USERNAME
 RUN git clone https://github.com/ArduPilot/ardupilot_gazebo.git
 
+# Build for Gazebo Garden, define this before building ardupilot_gazebo
+ENV GZ_VERSION=garden
+
 # Build ardupilot_gazebo
 RUN [ "/bin/bash" , "-c" , " \
   cd ardupilot_gazebo \
+  && git checkout 4b30a3d8 \
   && mkdir build \
   && cd build \
   && cmake .. -DCMAKE_BUILD_TYPE=RelWithDebInfo \
