@@ -2,15 +2,15 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
 
-  <name>bluerov2_ignition</name>
+  <name>bluerov2_gz</name>
   <version>0.6.0</version>
   <description>Model of BlueROV2 that runs in Gazebo Garden</description>
 
   <maintainer email="clyde@mcqueen.net">Clyde McQueen</maintainer>
   <license>MIT</license>
 
-  <url type="repository">https://github.com/clydemcqueen/bluerov2_ignition.git</url>
-  <url type="bugtracker">https://github.com/clydemcqueen/bluerov2_ignition/issues</url>
+  <url type="repository">https://github.com/clydemcqueen/bluerov2_gz.git</url>
+  <url type="bugtracker">https://github.com/clydemcqueen/bluerov2_gz/issues</url>
 
   <author>Clyde McQueen</author>
 

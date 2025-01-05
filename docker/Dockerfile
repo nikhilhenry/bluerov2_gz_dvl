@@ -77,7 +77,7 @@ RUN groupadd --gid $USER_GID $USERNAME \
   && useradd -s /bin/bash --uid $USER_UID --gid $USER_GID -m $USERNAME \
   && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
   && chmod 0440 /etc/sudoers.d/$USERNAME \
-  && echo "\n# Added by bluerov2_ignition Dockerfile:" >> /home/$USERNAME/.bashrc \
+  && echo "\n# Added by bluerov2_gz Dockerfile:" >> /home/$USERNAME/.bashrc \
   && echo "source /usr/share/bash-completion/completions/git" >> /home/$USERNAME/.bashrc
 
 # Switch to our new user
@@ -113,8 +113,8 @@ RUN [ "/bin/bash" , "-c" , " \
   && cmake .. -DCMAKE_BUILD_TYPE=RelWithDebInfo \
   && make -j4" ]
 
-# Copy bluerov2_ignition code
-WORKDIR /home/$USERNAME/bluerov2_ignition
+# Copy bluerov2_gz code
+WORKDIR /home/$USERNAME/bluerov2_gz
 COPY --chown=$USER_UID:$USER_GID . .
 
 # Set up the environment
@@ -122,7 +122,7 @@ WORKDIR /home/$USERNAME
 RUN echo "export PATH=/home/$USERNAME/.local/bin:\$PATH" >> /home/$USERNAME/.bashrc \
   && echo "export PATH=/home/$USERNAME/.local/lib/python3.10/site-packages:\$PATH" >> /home/$USERNAME/.bashrc \
   && echo "export GZ_SIM_SYSTEM_PLUGIN_PATH=/home/$USERNAME/ardupilot_gazebo/build" >> /home/$USERNAME/.bashrc \
-  && echo "export GZ_SIM_RESOURCE_PATH=/home/$USERNAME/bluerov2_ignition/models:/home/$USERNAME/bluerov2_ignition/worlds" >> /home/$USERNAME/.bashrc
+  && echo "export GZ_SIM_RESOURCE_PATH=/home/$USERNAME/bluerov2_gz/models:/home/$USERNAME/bluerov2_gz/worlds" >> /home/$USERNAME/.bashrc
 
 # Required to use the --console option on sim_vehicle.py
 # RUN pip3 install matplotlib

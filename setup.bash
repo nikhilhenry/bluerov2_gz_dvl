@@ -14,5 +14,5 @@ export GZ_SIM_SYSTEM_PLUGIN_PATH=$HOME/ardupilot_gazebo/build:$GZ_SIM_SYSTEM_PLU
 # Optional: add ardupilot_gazebo models and worlds
 export GZ_SIM_RESOURCE_PATH=$HOME/ardupilot_gazebo/models:$HOME/ardupilot_gazebo/worlds:$GZ_SIM_RESOURCE_PATH
 
-# Add bluerov2_ignition models and worlds
-export GZ_SIM_RESOURCE_PATH=$HOME/colcon_ws/src/bluerov2_ignition/models:$HOME/colcon_ws/src/bluerov2_ignition/worlds:$GZ_SIM_RESOURCE_PATH
+# Add bluerov2_gz models and worlds
+export GZ_SIM_RESOURCE_PATH=$HOME/colcon_ws/src/bluerov2_gz/models:$HOME/colcon_ws/src/bluerov2_gz/worlds:$GZ_SIM_RESOURCE_PATH

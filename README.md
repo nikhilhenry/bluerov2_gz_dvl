@@ -24,7 +24,7 @@ See the [Dockerfile](docker/Dockerfile) for full installation details.
 Gazebo can be launched using the following commands:
 
 ~~~bash
-export GZ_SIM_RESOURCE_PATH=~/colcon_ws/src/bluerov2_ignition/models:~/colcon_ws/src/bluerov2_ignition/worlds
+export GZ_SIM_RESOURCE_PATH=~/colcon_ws/src/bluerov2_gz/models:~/colcon_ws/src/bluerov2_gz/worlds
 export GZ_SIM_SYSTEM_PLUGIN_PATH=~/ardupilot_gazebo/build
 gz sim -v 3 -r <gazebo-world-file>
 ~~~
@@ -37,7 +37,7 @@ Once Gazebo has been launched, you can directly send thrust commands to the Blue
 model in Gazebo:
 
 ~~~bash
-cd ~/colcon_ws/src/bluerov2_ignition
+cd ~/colcon_ws/src/bluerov2_gz
 scripts/cw.sh <model_name>
 scripts/stop.sh <model_name>
 ~~~

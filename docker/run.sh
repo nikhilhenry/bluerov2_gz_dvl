@@ -17,7 +17,7 @@ fi
 # Specific for NVIDIA drivers, required for OpenGL >= 3.3
 docker run -it \
     --rm \
-    --name bluerov2_ignition \
+    --name bluerov2_gz \
     -e DISPLAY \
     -e QT_X11_NO_MITSHM=1 \
     -e XAUTHORITY=$XAUTH \
@@ -30,4 +30,4 @@ docker run -it \
     --privileged \
     --security-opt seccomp=unconfined \
     --gpus all \
-    bluerov2_ignition:latest
+    bluerov2_gz:latest

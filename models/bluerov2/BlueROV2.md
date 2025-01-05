@@ -13,8 +13,8 @@ Update the `GZ_SIM_RESOURCE_PATH` to include the BlueROV2 models:
 
 ~~~bash
 export GZ_SIM_RESOURCE_PATH=$GZ_SIM_RESOURCE_PATH:\
-~/colcon_ws/src/bluerov2_ignition/models:\
-~/colcon_ws/src/bluerov2_ignition/worlds
+~/colcon_ws/src/bluerov2_gz/models:\
+~/colcon_ws/src/bluerov2_gz/worlds
 ~~~
 
 ### Start Gazebo

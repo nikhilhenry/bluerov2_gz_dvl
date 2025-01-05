@@ -11,6 +11,6 @@ sim_vehicle.py -L RATBeach -v ArduSub --model=JSON --out=udp:0.0.0.0:14550 --no-
 
 In the 2nd terminal start Gazebo:
 ~~~
-docker exec -it bluerov2_ignition /bin/bash
+docker exec -it bluerov2_gz /bin/bash
 gz sim -v 3 -r bluerov2_underwater.world
 ~~~
