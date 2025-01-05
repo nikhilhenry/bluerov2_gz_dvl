@@ -41,12 +41,12 @@ RUN apt-get update \
     vim \
   && rm -rf /var/lib/apt/lists/*
 
-# Install Gazebo Garden
+# Install Gazebo Harmonic
 RUN wget https://packages.osrfoundation.org/gazebo.gpg -O /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg
 RUN echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] http://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" | tee /etc/apt/sources.list.d/gazebo-stable.list > /dev/null
 RUN apt-get update \
   && apt-get -y --quiet --no-install-recommends install \
-    gz-garden \
+    gz-harmonic \
   && rm -rf /var/lib/apt/lists/*
 
 # Install NVIDIA software
@@ -63,13 +63,13 @@ ENV NVIDIA_VISIBLE_DEVICES=all
 ENV NVIDIA_DRIVER_CAPABILITIES=graphics,utility,compute
 ENV QT_X11_NO_MITSHM=1
 
-# Install some ardupilot and ardupilot_gazebo prereqs (libgz-sim7-dev is for gz garden)
+# Install some ardupilot and ardupilot_gazebo prereqs (libgz-sim8-dev is for gz harmonic)
 RUN apt-get update \
   && apt-get -y --quiet --no-install-recommends install \
     python3-wxgtk4.0 \
     rapidjson-dev \
     xterm \
-    libgz-sim7-dev \
+    libgz-sim8-dev \
     libopencv-dev \
     libgstreamer1.0-dev \
     libgstreamer-plugins-base1.0-dev \
@@ -112,8 +112,8 @@ RUN modules/waf/waf-light configure --board sitl \
 WORKDIR /home/$USERNAME
 RUN git clone https://github.com/ArduPilot/ardupilot_gazebo.git
 
-# Build for Gazebo Garden, define this before building ardupilot_gazebo
-ENV GZ_VERSION=garden
+# Build for Gazebo Harmonic, define this before building ardupilot_gazebo
+ENV GZ_VERSION=harmonic
 
 # Build ardupilot_gazebo
 RUN [ "/bin/bash" , "-c" , " \

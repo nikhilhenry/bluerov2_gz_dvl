@@ -1,20 +1,20 @@
-# BlueROV2 in Gazebo Garden
+# BlueROV2 in Gazebo Harmonic
 
-> Status: proof-of-concept, updated for Gazebo Garden binaries
+> Status: proof-of-concept, updated for Gazebo Harmonic binaries
 
 This is a model of the BlueROV2, including support for both the base and heavy
-configurations, that runs in Gazebo Garden. It uses the BuoyancyPlugin,
+configurations, that runs in Gazebo Harmonic. It uses the BuoyancyPlugin,
 HydrodynamicsPlugin and ThrusterPlugin.
 
-![BlueROV2 Gazebo](images/bluerov2.png)
+![bluerov2_gz](images/bluerov2.png)
 
 ## Requirements
 
 Please ensure that the following requirements have been met prior to installing the
 project:
 
-* [Gazebo Garden 7.1.0](https://gazebosim.org/docs/garden/install)
-* [ardupilot_gazebo](https://github.com/ArduPilot/ardupilot_gazebo)
+* [Gazebo Harmonic](https://gazebosim.org/docs/harmonic/install)
+* [ardupilot_gazebo for Harmonic](https://github.com/ArduPilot/ardupilot_gazebo)
 * [ArduSub and MAVProxy](https://ardupilot.org/dev/docs/building-setup-linux.html)
 
 See the [Dockerfile](docker/Dockerfile) for full installation details.
@@ -79,7 +79,7 @@ respective directory.
 ## References
 
 * https://github.com/ardupilot/ardupilot_gazebo/wiki
-* https://gazebosim.org/docs/garden/install
+* https://gazebosim.org/docs/harmonic/install
 * https://ardupilot.org/dev/docs/building-setup-linux.html
 * https://ardupilot.org/dev/docs/setting-up-sitl-on-linux.html
 * https://ardupilot.org/mavproxy/docs/getting_started/download_and_installation.html
