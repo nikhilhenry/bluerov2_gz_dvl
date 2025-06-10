@@ -6,6 +6,8 @@ This is a model of the BlueROV2, including support for both the base and heavy
 configurations, that runs in Gazebo Harmonic. It uses the BuoyancyPlugin,
 HydrodynamicsPlugin and ThrusterPlugin.
 
+This forks adds support for the Gazebo DVL sensor to both the base and heavy configurations. The simulated DVL is a 4 beam bottom tracking sensor that provides velocity estimates of the vehicle.
+
 ![bluerov2_gz](images/bluerov2.png)
 
 ## Requirements
@@ -68,6 +70,14 @@ mode alt_hold
 rc 5 1550
 disarm
 ~~~
+
+## Accessing DVL Data
+
+The DVL data is published on the `/dvl/data` gz topic. You can access the data using the following command:
+
+```bash
+gz topic -e /dvl/data
+```
 
 Additional information regarding the usage of each model may be found in a model's
 respective directory.
